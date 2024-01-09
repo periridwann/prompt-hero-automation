@@ -15,17 +15,20 @@ Execute the following command in the terminal to install Playwright:
 ```bash
 playwright install
 ```
-## Config & Environment Variables
+## How to get the session token
 
-Configure the required parameters in the config.json file. Example configuration:
+- Open your browser and log in to https://prompthero.com/users sign_in.
+- Open Developer Tools by pressing F12, then find the _prompthero_session cookie in Application > Storage > Cookies > https://prompthero.com/.
+- Set the PROMPT_HERO_SESSION_TOKEN variable in the .env file with the obtained session token.
+- ![Alt text](https://github.com/periridwann/prompt-hero-automation/blob/main/Screenshot%202024-01-09%20185508.png)
 
-.env:
+## How to Use
 
-`PROMPT_HERO_SESSION_TOKEN`
-
-config.json:
+- Navigate to the source directory.
+- Create a JSON file with the following format in the data directory or any other desired directory:
 ```bash
 {
+    "image_path": "data/flower.json",
     "prompt": "my flower.",
     "negative_prompt": "",
     "model_user": "Stable Diffusion",
@@ -35,17 +38,8 @@ config.json:
     "post_description": ""
 }
 ```
-
-
-
-## How to get the session token
-
-- Open your browser and log in to https://prompthero.com/users sign_in.
-- Open Developer Tools by pressing F12, then find the _prompthero_session cookie in Application > Storage > Cookies > https://prompthero.com/.
-- Set the PROMPT_HERO_SESSION_TOKEN variable in the .env file with the obtained session token.
-- ![Alt text](https://github.com/periridwann/prompt-hero-automation/blob/main/Screenshot%202024-01-09%20185508.png)
-
-## How to Use
+- Ensure the image path (image_path) is correctly filled.
+- By default, the script reads configurations ending with .json and looks for images in the data directory. If you want to customize using your own directory, use the following commands:
 
 ```bash
 python main.py -t <type> -p <path>
@@ -58,10 +52,19 @@ python main.py
 ```
 - To run the script with a custom directory:
 ```bash
-python main.py -t directory -p path/to/your_image_directory/
+python main.py -t directory -p path/to/your_config_directory/
 ```
 - Or to run the script with a specific file:
 ```bash
-python main.py -t file -p path/to/your_image_directory/image_file.png
+python main.py -t file -p path/to/your_config_directory/config.json
 ```
-Ensure you are in the source directory before running the command. The script by default reads image files from the data/ directory and uses config.json for required parameters. If you want to customize the directory, use the -t and -p options as demonstrated above.
+
+Make sure you are in the source directory before running the command. The script, by default, reads configuration files ending with .json and searches for images in the data directory. If you want to customize the directory, use the -t and -p options as shown above.
+
+## Config & Environment Variables
+
+Configure the required PROMPT_HERO_SESSION_TOKEN in the .env file:
+
+`PROMPT_HERO_SESSION_TOKEN`
+
+
