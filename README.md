@@ -43,6 +43,7 @@ config.json:
 - Open your browser and log in to https://prompthero.com/users sign_in.
 - Open Developer Tools by pressing F12, then find the _prompthero_session cookie in Application > Storage > Cookies > https://prompthero.com/.
 - Set the PROMPT_HERO_SESSION_TOKEN variable in the .env file with the obtained session token.
+- ![Alt text](https://github.com/periridwann/prompt-hero-automation/blob/main/Screenshot%202024-01-09%20185508.png)
 
 ## How to Use
 
