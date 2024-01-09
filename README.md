@@ -1,7 +1,7 @@
 
 # Prompt Hero Automation
 
-The provided script automates the process of uploading prompt images to Prompt Hero. It simplifies the task by handling the login process, allowing users to configure parameters through config.json, and providing a command-line interface for specifying the type and path of images to upload.
+The provided script automates the process of uploading prompt images to Prompt Hero. It simplifies the task byallowing users to configure parameters through json config, and providing a command-line interface for specifying the type and path of images to upload.
 
 ## Installation
 
